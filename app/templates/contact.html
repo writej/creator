@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+
+    <h1>Contact</h1>
+    {% if success %}
+
+    <p>Thank you for your message. We'll get back to you shortly.</p>
+   <p> <li class="nav-item">
+        <a class="nav-link" href="{{ url_for ('index') }}">BACK TO HOME PAGE</a>
+      </li></p>
+  {% else %}
+
+    {{ wtf.quick_form(form) }}
+    {% endif %}
+{% endblock %}

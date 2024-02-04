@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1>COPY GENERATOR</h1>
+<br/><br/>
+<div class="container">
+    <h1 class="mt-5"><center>AI Copy Writing Tool</center></h1>
+
+    <p>This AI Copy Generator will allow you to enter a product name --- and get in return a full copy.</p>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <form class="" action="/copy_generator" method="post">
+          <div class="mb-3">
+            <label for="blogTopic" class="form-label">What product do you want to put on copy ?</label>
+            <input type="text" class="form-control" id="blogTopic" name="blogTopic" placeholder="Enter product name">
+          </div>
+          <input type="hidden" name="form1" value="form1">
+
+          <button type="submit" id="blogTopicButton" class="btn btn-primary">Generate Copy</button>
+        </form>
+      </div>
+      <br><br>
+      <div class="col-lg-6" aria-setsize="100vh">
+       <!-- 1. {{blogTopicIdeas|safe}}-->
+      <p><h1>Title:</h1><br>
+       {{blogTopicIdeas}}
+      </p>
+      </div>
+      <br>
+      <div class="col-lg-6" aria-setsize="100vh">
+        <!-- 1. {{blogTopicIdeas|safe}}-->
+       <p><h1>Copy text:</h1><br>
+        {{blogCopyText}}
+       </p>
+       </div>
+      
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+  
+</div>
+{% endblock %}

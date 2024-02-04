@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid" align = center>
+   <h1>Hi, {{ current_user.username }}!</h1>
+   <br>
+   <h1>Please select a tool:</h1>
+   <li>
+      
+    <p><a href="{{ url_for('copy_generator') }}" target="_blank">Copy Generator</a></p>
+
+    
+  
+
+</li>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+</div>
+{% endblock %}
